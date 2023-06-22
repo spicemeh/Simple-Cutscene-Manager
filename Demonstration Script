@@ -1,3 +1,8 @@
+--[[
+To setup your location and focus marker you will need to create 2 folders or models, one of them will have your location markers and the other will have your focus markers.
+After creating the folders/models you can now put a bunch of parts inside of them and move them around. The location points will be where your camera moves and the focus points will be where your camera
+will focus.
+]]
 local CSMan = require(game.ServerStorage:WaitForChild("CutsceneManager")) -- requiring the module
 
 task.wait(3) -- waiting 3 seconds for stuff to load in
