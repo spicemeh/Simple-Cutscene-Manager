@@ -1,4 +1,3 @@
-```Lua
 local play = game:GetService("ReplicatedStorage"):WaitForChild("Comms").Receive
 
 local CSMan = {}
@@ -98,4 +97,3 @@ function CSMan:DeleteCutscene(cutscene)
 end
 
 return CSMan
-```
