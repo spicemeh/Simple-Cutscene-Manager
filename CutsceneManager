@@ -84,12 +84,14 @@ function CSMan:Play(cutscene)
 	cutscene.Ended:Fire(cutscene)
 end
 
-function CSMan:DeleteCutscene(name : string)
-	if self.Cutscenes[name] then 
-		self.Cutscenes[name].Ended:Destroy()
-		table.remove(self.Cutscenes, table.find(self.Cutscenes, name))
+function CSMan:DeleteCutscene(cutscene)
+	if not cutscene then warn("No cutscene provided.") return end
+	
+	if self.Cutscenes[cutscene.Name] then 
+		self.Cutscenes[cutscene.Name].Ended:Destroy()
+		table.remove(self.Cutscenes, table.find(self.Cutscenes, cutscene))
 	else 
-		warn(string.format("A cutscene by the name of \"%s\" does not exist.", name)) 
+		warn(string.format("A cutscene by the name of \"%s\" does not exist.", cutscene.Name)) 
 		return 
 	end
 end
