@@ -75,7 +75,7 @@ function CSMan:Play(cutscene)
 		if tweenSets[move] then tweenInfo = tweenSets[move] end
 		
 		for _, plr in plrs do
-			if not plr then continue end
+			if plr and type(plr) == Instance and plr:IsA("Player") then continue end
 			play:FireClient(plr, {tweenInfo}, locationPoint, focusPoint)
 		end
 		task.wait(tweenInfo.Time)
